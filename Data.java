@@ -24,10 +24,10 @@ class Data {
   }
 
   public int calcUltimoDia (int ano) {
-    if (ano % 4 == 0) { 
-      return 29; 
-    } else if ((ano % 400 == 0 ) && ( ano % 100 != 0 )) {
+    if (ano % 400 == 0) {
       return 29;
+    } else if (ano % 4 == 0 && ano % 100 != 0) {
+      return 29; 
     } else { 
       return 28; 
     }
@@ -45,7 +45,7 @@ class Data {
     }
     while (!inicio.igual(fim)) {
       dias++;
-      int ultimoDia = (inicio.mes -1) == 1 ? this.calcUltimoDia(data.ano) : this.ultimodia[inicio.mes - 1];
+      int ultimoDia = (inicio.mes -1) == 1 ? this.calcUltimoDia(inicio.ano) : this.ultimodia[inicio.mes - 1];
       if (++inicio.dia > ultimoDia) {
         inicio.dia = 1;
         if (++inicio.mes > 12) {
