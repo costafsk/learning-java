@@ -1,3 +1,5 @@
+package Field.Specifics;
+
 public class SalaryField extends DoubleField {
     public SalaryField(String caption) throws InvalidFieldCaptionException {
         super(caption);
